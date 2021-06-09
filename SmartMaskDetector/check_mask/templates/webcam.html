@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+{% load static %}
+    {% block css %}
+	<style>
+	body{
+		background-color: black;
+		color: white;
+	}
+	</style>
+    {% endblock %}
+
+	{% block webcam %}
+    <div class="container">
+	<div class="row">
+		<div class="col-lg-9 col-md-10"><br>
+			<h1>Live Video Streaming</h1>	  
+			<img id="videofeed" src = "{% url 'check_mask:video_feed' %}">
+		</div>
+	  
+		<div class="col-lg-3 col-md-4">
+		<br><br>
+			<h3>Instruction:</h3>
+			<p>1. Keep your face properly<p>
+			<p>2. Always wear mask</p>
+			<p>3. Do not use handercheif</p>
+			<p>4. DO not use hand also</p><br><br>
+		
+		<a class="btn btn-primary" href="{% url 'check_mask:send_mail' %}">send mail</a>
+	
+		</div>
+	</div>
+	</div>
+	{% endblock %}

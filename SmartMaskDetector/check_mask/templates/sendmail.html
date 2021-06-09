@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% load static %}
+    {% block css %}
+	<style>
+	body{
+		background-color: black;
+		color: white;
+	}
+	</style>
+    {% endblock %}
+
+	{% block webcam %}
+    <div class="container">
+	<div class="row">
+		<form action="" method="post">
+                {% csrf_token %}        
+                <input type="password" name="password"></input>
+				<button class="btn btn-primary" type="submit">send mail</button>
+        </form> 
+	</div>
+	</div>
+	{% endblock %}

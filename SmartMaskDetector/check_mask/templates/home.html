@@ -1,0 +1,41 @@
+{% load static %}  
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Mask Detector </title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- favicon file -->
+      <link rel=" shortcut icon" href="/static/logo.png" type="image/png"> 
+      <!-- Bootstrap -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block css %}    {% endblock %}
+
+      <link rel="stylesheet" href="/static/style.css?{% now 'U' %}">
+     
+  </head>
+
+  <body>
+
+    {% block webcam %}
+      <div class="container-fluid">
+        <div class="container">
+		
+           
+            <h1>Smart Mask Detector</h1><br>
+            <p>
+              This project helps the authorities to make the process of monitoring fast. The project helps us to spread awareness 
+              among people using face mask properly. It also detects if, the person is using a handkerchief or hand instead of a 
+              face mask for covering the face and it will classify it as without mask.
+            </p>
+            <a class="btn btn-primary" href="{% url 'check_mask:webcam' %}">Start Detecting --></a>
+        </div>
+		
+      </div>
+    
+	{% endblock %}
+        
+  </body>
+</html>
